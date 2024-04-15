@@ -1,0 +1,19 @@
+def spocitej_pismena(slovo):
+    vyskyty = {}
+    for pismeno in slovo:
+        # Ignorovat mezery
+        if pismeno != ' ':
+            # Přidat písmeno do slovníku vyskytů
+            vyskyty[pismeno] = vyskyty.get(pismeno, 0) + 1
+    return vyskyty
+
+def main():
+    slovo = input("Zadej slovo: ").lower()  # Převedení všech písmen na malá písmena
+    vyskyty = spocitej_pismena(slovo)
+    
+    print("Písmena ve slově '{}' a jejich výskyty:".format(slovo))
+    for pismeno, pocet in vyskyty.items():
+        print("{}: {}".format(pismeno, pocet))
+
+if __name__ == "__main__":
+    main()
